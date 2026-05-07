@@ -56,3 +56,5 @@ SnapInsta.to_*
 # Loose root dumps (move into src/ or public/ before committing)
 /logo.png
 /logotransperant.png
+
+.vercel

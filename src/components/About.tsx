@@ -61,7 +61,7 @@ export default function About() {
         <div className="mt-20">
           <div className="overflow-hidden aspect-[21/8]">
             <img
-              src="/media/studio/05.jpg"
+              src="/media/studio/06.jpg"
               alt={t('about.imgAlt')}
               loading="lazy"
               className="w-full h-full object-cover object-center grayscale opacity-70"

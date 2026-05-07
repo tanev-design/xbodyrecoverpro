@@ -77,10 +77,6 @@ export default function Hero() {
           </p>
         </div>
       </div>
-
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30" aria-hidden="true">
-        <div className="w-px h-12 bg-[#F4F1EC] animate-pulse" />
-      </div>
     </section>
   );
 }
