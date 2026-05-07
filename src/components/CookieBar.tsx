@@ -5,8 +5,8 @@ const STORAGE_KEY = 'xbodyrecoverpro-cookie-ok';
 
 const copy = {
   bg: {
-    body: 'Ð˜Ð·Ð¿Ð¾Ð»Ð·Ð²Ð°Ð¼Ðµ Ð¾ÑÐ½Ð¾Ð²Ð½Ð¸ Ð±Ð¸ÑÐºÐ²Ð¸Ñ‚ÐºÐ¸ Ð·Ð° ÑÑ‚Ð°Ð±Ð¸Ð»Ð½Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ð° Ð½Ð° ÑÐ°Ð¹Ñ‚Ð°.',
-    accept: 'Ð Ð°Ð·Ð±Ñ€Ð°Ñ…',
+    body: 'Използваме основни бисквитки за стабилна работа на сайта.',
+    accept: 'Разбрах',
   },
   en: {
     body: 'We use essential cookies to keep the site working smoothly.',

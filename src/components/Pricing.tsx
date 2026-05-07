@@ -4,14 +4,14 @@ import { useI18n } from '../i18n/useI18n';
 const BOOKING_URL = 'https://studio24.bg/en/x-body-recover-pro-s12994';
 
 // EUR/BGN dual-display until 2026-08-08
-// Fixed peg: 1 EUR = 1.95583 Ð»Ð²
-// After 2026-08-08: remove BGN column and Ð»Ð² display, show EUR only
+// Fixed peg: 1 EUR = 1.95583 лв
+// After 2026-08-08: remove BGN column and лв display, show EUR only
 const packages = [
-  { sessions: 1,  eur: 'â‚¬23.01',  bgn: '45.00 Ð»Ð²',  highlight: false },
-  { sessions: 4,  eur: 'â‚¬85.90',  bgn: '168.00 Ð»Ð²', highlight: false },
-  { sessions: 8,  eur: 'â‚¬163.61', bgn: '320.00 Ð»Ð²', highlight: true  },
-  { sessions: 12, eur: 'â‚¬239.28', bgn: '468.00 Ð»Ð²', highlight: false },
-  { sessions: 16, eur: 'â‚¬310.87', bgn: '608.00 Ð»Ð²', highlight: false },
+  { sessions: 1,  eur: '€23.01',  bgn: '45.00 лв',  highlight: false },
+  { sessions: 4,  eur: '€85.90',  bgn: '168.00 лв', highlight: false },
+  { sessions: 8,  eur: '€163.61', bgn: '320.00 лв', highlight: true  },
+  { sessions: 12, eur: '€239.28', bgn: '468.00 лв', highlight: false },
+  { sessions: 16, eur: '€310.87', bgn: '608.00 лв', highlight: false },
 ];
 
 export default function Pricing() {
@@ -47,7 +47,7 @@ export default function Pricing() {
           <div className="grid grid-cols-3 pb-3 border-b border-white/10 mb-1">
             <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#F4F1EC]/30">{t('pricing.col.package')}</span>
             <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#F4F1EC]/30 text-right">EUR</span>
-            <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#F4F1EC]/30 text-right">BGN / Ð»Ð²</span>
+            <span className="text-[11px] font-semibold tracking-[0.15em] uppercase text-[#F4F1EC]/30 text-right">BGN / лв</span>
           </div>
 
           {packages.map((pkg, i) => (

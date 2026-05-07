@@ -72,7 +72,7 @@ export default function Hero() {
 
           <p className="mt-10 text-[#F4F1EC]/35 text-sm font-light">
             {t('hero.priceFrom')}{' '}
-            <span className="text-[#F4F1EC]/70 font-medium">â‚¬23.01 / 45.00 Ð»Ð²</span>
+            <span className="text-[#F4F1EC]/70 font-medium">€23.01 / 45.00 лв</span>
             {' '}{t('hero.priceFromSuffix')}
           </p>
         </div>
