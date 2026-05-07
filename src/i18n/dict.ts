@@ -107,6 +107,7 @@ export const dict = {
     'foot.hours.saturday': 'Събота',
     'foot.hours.sunday': 'Неделя',
     'foot.contact.eyebrow': 'Свържи се с нас',
+    'foot.contact.phoneLabel': 'Телефон',
     'foot.copyright': 'X-Body Recover Pro · ул. Модър 24, Пловдив',
   },
   en: {
@@ -215,6 +216,7 @@ export const dict = {
     'foot.hours.saturday': 'Saturday',
     'foot.hours.sunday': 'Sunday',
     'foot.contact.eyebrow': 'Get in touch',
+    'foot.contact.phoneLabel': 'Phone',
     'foot.copyright': 'X-Body Recover Pro · 24 Modar St., Plovdiv',
   },
 } as const;

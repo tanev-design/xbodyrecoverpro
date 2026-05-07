@@ -1,4 +1,4 @@
-import { MapPin, Clock, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Clock, Instagram, Facebook, Phone } from 'lucide-react';
 import { useI18n } from '../i18n/I18nProvider';
 
 const BOOKING_URL = 'https://studio24.bg/en/x-body-recover-pro-s12994';
@@ -67,6 +67,22 @@ export default function Footer() {
           <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C0362C] mb-6">
             {t('foot.contact.eyebrow')}
           </p>
+          <a
+            href="tel:+359886517798"
+            className="flex items-center gap-3 mb-4 group"
+            aria-label={`${t('foot.contact.phoneLabel')}: +359 88 651 7798`}
+          >
+            <Phone size={16} className="text-[#F4F1EC]/40 shrink-0 group-hover:text-[#C0362C] transition-colors" />
+            <div>
+              <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#F4F1EC]/40 mb-0.5">
+                {t('foot.contact.phoneLabel')}
+              </p>
+              <p className="font-['Fraunces'] text-[1.3rem] font-[700] text-[#F4F1EC] leading-none group-hover:text-[#C0362C] transition-colors">
+                +359 88 651 7798
+              </p>
+            </div>
+          </a>
+
           <a
             href={BOOKING_URL}
             target="_blank"

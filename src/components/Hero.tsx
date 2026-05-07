@@ -56,10 +56,10 @@ export default function Hero() {
               {t('hero.cta.book')}
             </a>
             <a
-              href="#how-it-works"
-              className="inline-flex items-center justify-center px-8 py-4 border border-[#F4F1EC]/20 text-[#F4F1EC]/70 text-[13px] font-medium tracking-[0.15em] uppercase hover:border-[#F4F1EC]/50 hover:text-[#F4F1EC] transition-colors duration-200"
+              href="tel:+359886517798"
+              className="inline-flex items-center justify-center px-8 py-4 border border-[#F4F1EC]/20 text-[#F4F1EC]/80 text-[13px] font-medium tracking-[0.15em] uppercase hover:border-[#F4F1EC]/50 hover:text-[#F4F1EC] transition-colors duration-200"
             >
-              {t('hero.cta.how')}
+              +359 88 651 7798
             </a>
           </div>
 
