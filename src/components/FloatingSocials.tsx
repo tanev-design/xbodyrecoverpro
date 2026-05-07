@@ -23,7 +23,7 @@ export default function FloatingSocials() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="flex h-11 w-11 items-center justify-center border border-white/10 bg-[#111315]/88 text-[#F4F1EC]/75 shadow-lg backdrop-blur-md transition-colors duration-200 hover:border-[#C0362C]/70 hover:bg-[#C0362C] hover:text-[#F4F1EC]"
+          className="flex h-11 w-11 items-center justify-center border border-white/10 bg-[#111315]/92 text-[#F4F1EC]/75 shadow-lg transition-colors duration-200 hover:border-[#C0362C]/70 hover:bg-[#C0362C] hover:text-[#F4F1EC]"
         >
           <Icon size={18} />
         </a>

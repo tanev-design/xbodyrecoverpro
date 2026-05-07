@@ -1,5 +1,5 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-import { useI18n } from '../i18n/I18nProvider';
+﻿import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useI18n } from '../i18n/useI18n';
 import type { DictKey } from '../i18n/dict';
 
 const BOOKING_URL = 'https://studio24.bg/en/x-body-recover-pro-s12994';
@@ -15,7 +15,7 @@ type Service = {
 
 const services: Service[] = [
   { tagKey: 'srv.1.tag', titleKey: 'srv.1.title', bodyKey: 'srv.1.body', image: '/media/studio/02.jpg', stat: '90%',  statLabelKey: 'srv.1.statLabel' },
-  { tagKey: 'srv.2.tag', titleKey: 'srv.2.title', bodyKey: 'srv.2.body', image: '/media/studio/03.jpg', stat: '4–16', statLabelKey: 'srv.2.statLabel' },
+  { tagKey: 'srv.2.tag', titleKey: 'srv.2.title', bodyKey: 'srv.2.body', image: '/media/studio/03.jpg', stat: '4â€“16', statLabelKey: 'srv.2.statLabel' },
   { tagKey: 'srv.3.tag', titleKey: 'srv.3.title', bodyKey: 'srv.3.body', image: '/media/studio/04.jpg', stat: '1:1',  statLabelKey: 'srv.3.statLabel' },
 ];
 

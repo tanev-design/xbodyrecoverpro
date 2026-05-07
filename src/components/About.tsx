@@ -1,5 +1,5 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-import { useI18n } from '../i18n/I18nProvider';
+﻿import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useI18n } from '../i18n/useI18n';
 import type { DictKey } from '../i18n/dict';
 
 type Cred = { value: string; labelKey: DictKey; subKey: DictKey };

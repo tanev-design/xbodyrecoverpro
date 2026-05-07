@@ -1,9 +1,4 @@
 import { useEffect } from 'react';
-import Lenis from 'lenis';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const isTouch =
   typeof window !== 'undefined' &&
@@ -15,51 +10,64 @@ const prefersReducedMotion =
 
 export default function SmoothScroll() {
   useEffect(() => {
-    // Vault rule: ignoreMobileResize prevents address-bar resize loops
-    ScrollTrigger.config({ ignoreMobileResize: true });
+    if (prefersReducedMotion || isTouch) return;
 
-    if (prefersReducedMotion) return;
+    let cleanup = () => {};
+    let cancelled = false;
 
-    // Vault rule: normalizeScroll on touch devices to prevent toolbar jank
-    if (isTouch) {
-      ScrollTrigger.normalizeScroll({ allowNestedScroll: true, type: 'touch' });
+    async function initDesktopScroll() {
+      const [{ default: Lenis }, { gsap }, { ScrollTrigger }] = await Promise.all([
+        import('lenis'),
+        import('gsap'),
+        import('gsap/ScrollTrigger'),
+      ]);
+
+      if (cancelled) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.config({ ignoreMobileResize: true });
+
+      const lenis = new Lenis({
+        duration: 1.1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+
+      lenis.on('scroll', ScrollTrigger.update);
+
+      const raf = (time: number) => {
+        lenis.raf(time * 1000);
+      };
+
+      gsap.ticker.add(raf);
+      gsap.ticker.lagSmoothing(0);
+
+      const onAnchor = (e: Event) => {
+        const target = e.target as HTMLElement;
+        const link = target.closest('a[href^="#"]') as HTMLAnchorElement | null;
+        if (!link) return;
+        const id = link.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        lenis.scrollTo(el as HTMLElement, { offset: -64 });
+      };
+
+      document.addEventListener('click', onAnchor);
+
+      cleanup = () => {
+        document.removeEventListener('click', onAnchor);
+        gsap.ticker.remove(raf);
+        lenis.destroy();
+      };
     }
 
-    // Lenis for desktop smooth scroll. syncTouch:false — let iOS handle touch natively (vault rule).
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      syncTouch: false,
-      touchMultiplier: 1,
-    });
-
-    lenis.on('scroll', ScrollTrigger.update);
-
-    const raf = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-    gsap.ticker.add(raf);
-    gsap.ticker.lagSmoothing(0);
-
-    // Smooth-scroll anchor clicks
-    const onAnchor = (e: Event) => {
-      const target = e.target as HTMLElement;
-      const link = target.closest('a[href^="#"]') as HTMLAnchorElement | null;
-      if (!link) return;
-      const id = link.getAttribute('href');
-      if (!id || id === '#') return;
-      const el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      lenis.scrollTo(el as HTMLElement, { offset: -64 });
-    };
-    document.addEventListener('click', onAnchor);
+    void initDesktopScroll();
 
     return () => {
-      gsap.ticker.remove(raf);
-      lenis.destroy();
-      document.removeEventListener('click', onAnchor);
+      cancelled = true;
+      cleanup();
     };
   }, []);
 

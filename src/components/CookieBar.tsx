@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useI18n } from '../i18n/I18nProvider';
+﻿import { useEffect, useState } from 'react';
+import { useI18n } from '../i18n/useI18n';
 
 const STORAGE_KEY = 'xbodyrecoverpro-cookie-ok';
 
 const copy = {
   bg: {
-    body: 'Използваме основни бисквитки за стабилна работа на сайта.',
-    accept: 'Разбрах',
+    body: 'Ð˜Ð·Ð¿Ð¾Ð»Ð·Ð²Ð°Ð¼Ðµ Ð¾ÑÐ½Ð¾Ð²Ð½Ð¸ Ð±Ð¸ÑÐºÐ²Ð¸Ñ‚ÐºÐ¸ Ð·Ð° ÑÑ‚Ð°Ð±Ð¸Ð»Ð½Ð° Ñ€Ð°Ð±Ð¾Ñ‚Ð° Ð½Ð° ÑÐ°Ð¹Ñ‚Ð°.',
+    accept: 'Ð Ð°Ð·Ð±Ñ€Ð°Ñ…',
   },
   en: {
     body: 'We use essential cookies to keep the site working smoothly.',
@@ -33,7 +33,7 @@ export default function CookieBar() {
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-50 md:left-1/2 md:right-auto md:w-[min(520px,calc(100vw-32px))] md:-translate-x-1/2">
-      <div className="flex items-center justify-between gap-4 border border-white/10 bg-[#111315]/94 px-4 py-3 shadow-xl backdrop-blur-md">
+      <div className="flex items-center justify-between gap-4 border border-white/10 bg-[#111315] px-4 py-3 shadow-xl">
         <p className="text-xs font-light leading-relaxed text-[#F4F1EC]/65">{copy[locale].body}</p>
         <button
           type="button"

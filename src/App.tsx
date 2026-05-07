@@ -1,4 +1,4 @@
-import { I18nProvider } from './i18n/I18nProvider';
+﻿import { I18nProvider } from './i18n/I18nProvider';
 import SmoothScroll from './lib/SmoothScroll';
 import Nav from './components/Nav';
 import Hero from './components/Hero';

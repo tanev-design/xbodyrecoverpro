@@ -44,6 +44,7 @@ Desktop.ini
 # Local
 *.local
 .cache/
+.claude/
 
 # Vercel
 .vercel
@@ -57,4 +58,3 @@ SnapInsta.to_*
 /logo.png
 /logotransperant.png
 
-.vercel

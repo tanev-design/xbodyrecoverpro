@@ -1,5 +1,5 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-import { useI18n } from '../i18n/I18nProvider';
+﻿import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useI18n } from '../i18n/useI18n';
 import type { DictKey } from '../i18n/dict';
 
 type Member = {
@@ -10,13 +10,13 @@ type Member = {
 };
 
 const team: Member[] = [
-  { nameKey: 'team.t1.name', bioKey: 'team.t1.bio', roleKey: 'team.role.trainer', image: '/media/studio/aleksander.png' },
-  { nameKey: 'team.t2.name', bioKey: 'team.t2.bio', roleKey: 'team.role.trainer', image: '/media/studio/zornica.png' },
+  { nameKey: 'team.t1.name', bioKey: 'team.t1.bio', roleKey: 'team.role.trainer', image: '/media/studio/aleksander-team.jpg' },
+  { nameKey: 'team.t2.name', bioKey: 'team.t2.bio', roleKey: 'team.role.trainer', image: '/media/studio/zornica-team.jpg' },
 ];
 
 const teamEN: Member[] = [
-  { nameKey: 'team.t1.name', bioKey: 'team.t1.bio', roleKey: 'team.role.trainer', image: '/media/studio/aleksander.png' },
-  { nameKey: 'team.t2.name', bioKey: 'team.t2.bio', roleKey: 'team.role.trainer', image: '/media/studio/zornica.png' },
+  { nameKey: 'team.t1.name', bioKey: 'team.t1.bio', roleKey: 'team.role.trainer', image: '/media/studio/aleksander-team.jpg' },
+  { nameKey: 'team.t2.name', bioKey: 'team.t2.bio', roleKey: 'team.role.trainer', image: '/media/studio/zornica-team.jpg' },
 ];
 
 export default function Team() {

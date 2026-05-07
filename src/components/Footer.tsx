@@ -1,5 +1,5 @@
-import { MapPin, Clock, Instagram, Facebook, Phone } from 'lucide-react';
-import { useI18n } from '../i18n/I18nProvider';
+﻿import { MapPin, Clock, Instagram, Facebook, Phone } from 'lucide-react';
+import { useI18n } from '../i18n/useI18n';
 
 const BOOKING_URL = 'https://studio24.bg/en/x-body-recover-pro-s12994';
 
@@ -7,9 +7,9 @@ export default function Footer() {
   const { t } = useI18n();
 
   const hours = [
-    { days: t('foot.hours.weekdays'), time: '08:00 – 20:00' },
-    { days: t('foot.hours.saturday'), time: '12:00 – 19:00' },
-    { days: t('foot.hours.sunday'),   time: '10:00 – 19:00' },
+    { days: t('foot.hours.weekdays'), time: '08:00 â€“ 20:00' },
+    { days: t('foot.hours.saturday'), time: '12:00 â€“ 19:00' },
+    { days: t('foot.hours.sunday'),   time: '10:00 â€“ 19:00' },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function Footer() {
             aria-label={t('foot.address.aria')}
           >
             <iframe
-              title="X-Body Recover Pro — ул. Модър 24, Пловдив"
+              title="X-Body Recover Pro â€” ÑƒÐ». ÐœÐ¾Ð´ÑŠÑ€ 24, ÐŸÐ»Ð¾Ð²Ð´Ð¸Ð²"
               src="https://maps.google.com/maps?q=42.125580,24.719260&z=18&output=embed&hl=bg"
               width="100%"
               height="100%"
@@ -122,7 +122,7 @@ export default function Footer() {
           className="h-7 w-auto brightness-0 invert opacity-50"
         />
         <p className="text-[#F4F1EC]/20 text-xs font-light">
-          © {new Date().getFullYear()} {t('foot.copyright')}
+          Â© {new Date().getFullYear()} {t('foot.copyright')}
         </p>
       </div>
     </footer>

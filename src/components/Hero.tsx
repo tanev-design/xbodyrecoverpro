@@ -1,4 +1,4 @@
-import { useI18n } from '../i18n/I18nProvider';
+﻿import { useI18n } from '../i18n/useI18n';
 import GoogleRating from './GoogleRating';
 
 // EUR/BGN dual-display until 2026-08-08
@@ -15,7 +15,7 @@ export default function Hero() {
         <img
           src="/media/ig/01.jpg"
           alt=""
-          className="absolute inset-y-0 right-0 h-full w-full md:w-[68%] object-cover object-right opacity-40 md:opacity-72 grayscale [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.08)_14%,rgba(0,0,0,0.38)_30%,#000_52%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.08)_14%,rgba(0,0,0,0.38)_30%,#000_52%)]"
+          className="absolute inset-y-0 right-0 h-full w-full object-cover object-right opacity-30 md:w-[68%] md:opacity-72 md:grayscale md:[mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.08)_14%,rgba(0,0,0,0.38)_30%,#000_52%)] md:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.08)_14%,rgba(0,0,0,0.38)_30%,#000_52%)]"
           aria-hidden="true"
           fetchPriority="high"
         />
@@ -72,7 +72,7 @@ export default function Hero() {
 
           <p className="mt-10 text-[#F4F1EC]/35 text-sm font-light">
             {t('hero.priceFrom')}{' '}
-            <span className="text-[#F4F1EC]/70 font-medium">€23.01 / 45.00 лв</span>
+            <span className="text-[#F4F1EC]/70 font-medium">â‚¬23.01 / 45.00 Ð»Ð²</span>
             {' '}{t('hero.priceFromSuffix')}
           </p>
         </div>

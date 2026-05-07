@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useI18n } from '../i18n/I18nProvider';
+import { useI18n } from '../i18n/useI18n';
 
 const BOOKING_URL = 'https://studio24.bg/en/x-body-recover-pro-s12994';
 
@@ -45,12 +45,12 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#111315]/10 transition-shadow duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#111315]/10 transition-shadow duration-500 ${
         scrolled ? 'shadow-[0_10px_30px_rgba(17,19,21,0.08)]' : 'shadow-none'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center" aria-label="X-Body Recover Pro home">
+        <a href="#main" className="flex items-center" aria-label="X-Body Recover Pro home">
           <img
             src="/logotransperant.png"
             alt="X-Body Recover Pro"
@@ -94,7 +94,7 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="md:hidden bg-white/95 backdrop-blur-md border-t border-[#111315]/10 px-6 py-6 flex flex-col gap-5">
+        <div id="mobile-menu" className="md:hidden bg-white border-t border-[#111315]/10 px-6 py-6 flex flex-col gap-5">
           {links.map((l) => (
             <a
               key={l.href}
