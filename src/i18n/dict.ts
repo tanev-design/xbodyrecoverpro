@@ -54,7 +54,7 @@ export const dict = {
 
     'about.eyebrow': 'За студиото',
     'about.heading.1': 'Клинична прецизност.',
-    'about.heading.2': 'Частна обстановка.',
+    'about.heading.2': 'Индивидуален подход.',
     'about.lead': 'X-Body Recover Pro е мястото, където 20 минути дават резултат, който другите гонят с часове.',
     'about.cred.1.label': 'Рейтинг',
     'about.cred.1.sub': 'Google отзиви',
@@ -173,7 +173,7 @@ export const dict = {
 
     'about.eyebrow': 'The studio',
     'about.heading.1': 'Clinical precision.',
-    'about.heading.2': 'Private setting.',
+    'about.heading.2': 'Individual approach.',
     'about.lead': 'X-Body Recover Pro is where 20 minutes deliver the result others chase for hours.',
     'about.cred.1.label': 'Rating',
     'about.cred.1.sub': 'Google reviews',

@@ -15,7 +15,7 @@ function detectLocale(): Locale {
   if (typeof window === 'undefined') return 'bg';
   const saved = window.localStorage.getItem(STORAGE_KEY);
   if (saved === 'bg' || saved === 'en') return saved;
-  return navigator.language?.toLowerCase().startsWith('en') ? 'en' : 'bg';
+  return 'bg';
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
