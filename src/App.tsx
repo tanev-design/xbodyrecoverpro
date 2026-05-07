@@ -9,6 +9,8 @@ import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
+import FloatingSocials from './components/FloatingSocials';
+import CookieBar from './components/CookieBar';
 
 export default function App() {
   return (
@@ -26,6 +28,8 @@ export default function App() {
           <Pricing />
         </main>
         <Footer />
+        <FloatingSocials />
+        <CookieBar />
       </div>
     </I18nProvider>
   );
