@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --app-height: 100svh;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #111315;
+    color: #F4F1EC;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Cross-browser scroll stability — vault rule.
+     overflow-x:clip belongs on the app root, NEVER on html/body. */
+  #root {
+    overflow-x: clip;
+  }
+
+  /* Accessible focus ring — keyboard only */
+  :focus-visible {
+    outline: 2px solid #C0362C;
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Skip-nav for screen-reader and keyboard users */
+  .skip-nav {
+    position: absolute;
+    top: -64px;
+    left: 16px;
+    z-index: 100;
+    background: #C0362C;
+    color: #F4F1EC;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: top 200ms ease;
+  }
+  .skip-nav:focus {
+    top: 16px;
+  }
+
+  ::selection {
+    background: #C0362C;
+    color: #F4F1EC;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

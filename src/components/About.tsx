@@ -1,38 +1,30 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useI18n } from '../i18n/I18nProvider';
+import type { DictKey } from '../i18n/dict';
 
-const credentials = [
-  { value: '5.0', label: 'Рейтинг', sub: 'Google Reviews' },
-  { value: 'Dry Suit', label: 'Следващо поколение', sub: 'Без мокри електроди' },
-  { value: '1:1', label: 'Личен треньор', sub: 'Всяка сесия' },
-  { value: '2023', label: 'Официален партньор', sub: 'X-Body системи' },
+type Cred = { value: string; labelKey: DictKey; subKey: DictKey };
+const credentials: Cred[] = [
+  { value: '5.0',      labelKey: 'about.cred.1.label', subKey: 'about.cred.1.sub' },
+  { value: 'Dry Suit', labelKey: 'about.cred.2.label', subKey: 'about.cred.2.sub' },
+  { value: '1:1',      labelKey: 'about.cred.3.label', subKey: 'about.cred.3.sub' },
+  { value: '2023',     labelKey: 'about.cred.4.label', subKey: 'about.cred.4.sub' },
 ];
 
-const details = [
-  {
-    title: 'Официален X-Body партньор',
-    body: 'Студиото работи изключително с оригинални X-Body устройства и лицензирани протоколи. Не компромиси в оборудването.',
-  },
-  {
-    title: 'Dry Suit технология',
-    body: 'Сухата система означава, че облечеш костюма и тренираш — без влага, без залепване, без неудобство. По-хигиенично, по-ефективно.',
-  },
-  {
-    title: 'Персонализирани планове',
-    body: 'Всеки клиент получава индивидуална програма с измерими цели. Следим напредъка сесия по сесия.',
-  },
-  {
-    title: 'Централно местоположение',
-    body: 'Западен район, ул. Модар 24. Собствен паркинг — идеален за бързо обедно или след работа.',
-  },
+type Detail = { titleKey: DictKey; bodyKey: DictKey };
+const details: Detail[] = [
+  { titleKey: 'about.detail.1.title', bodyKey: 'about.detail.1.body' },
+  { titleKey: 'about.detail.2.title', bodyKey: 'about.detail.2.body' },
+  { titleKey: 'about.detail.3.title', bodyKey: 'about.detail.3.body' },
+  { titleKey: 'about.detail.4.title', bodyKey: 'about.detail.4.body' },
 ];
 
 export default function About() {
+  const { t } = useI18n();
   const { ref, visible } = useScrollReveal<HTMLDivElement>();
 
   return (
     <section id="about" className="bg-[#111315] py-28 md:py-36">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
-        {/* Header */}
         <div
           ref={ref}
           className={`transition-all duration-700 mb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-end ${
@@ -41,40 +33,38 @@ export default function About() {
         >
           <div>
             <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#C0362C] mb-6">
-              За студиото
+              {t('about.eyebrow')}
             </p>
-            <h2 className="font-['Fraunces'] text-[clamp(2rem,4vw,3.5rem)] font-700 text-[#F4F1EC] leading-[1.1]">
-              Клинична прецизност.
+            <h2 className="font-['Fraunces'] text-[clamp(2rem,4vw,3.5rem)] font-[700] text-[#F4F1EC] leading-[1.1]">
+              {t('about.heading.1')}
               <br />
-              <span className="italic font-300 text-[#F4F1EC]/50">Частна обстановка.</span>
+              <span className="italic font-[300] text-[#F4F1EC]/50">{t('about.heading.2')}</span>
             </h2>
           </div>
           <p className="text-[#F4F1EC]/50 text-base font-light leading-relaxed md:mb-1">
-            X-Body Recover Pro не е фитнес зала. Не е спа. Работим в пространството между физиотерапевтичен кабинет и елитно студио — с резултати, измерени в данни, не в обещания.
+            {t('about.lead')}
           </p>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 mb-20">
           {credentials.map((c, i) => (
-            <CredentialBlock key={c.label} cred={c} index={i} />
+            <CredentialBlock key={c.labelKey} cred={c} index={i} />
           ))}
         </div>
 
-        {/* Details grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {details.map((d, i) => (
-            <DetailBlock key={d.title} detail={d} index={i} />
+            <DetailBlock key={d.titleKey} detail={d} index={i} />
           ))}
         </div>
 
-        {/* Photo */}
         <div className="mt-20">
           <div className="overflow-hidden aspect-[21/8]">
             <img
-              src="https://images.pexels.com/photos/4162451/pexels-photo-4162451.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="X-Body Recover Pro студио"
-              className="w-full h-full object-cover object-center grayscale opacity-60"
+              src="/media/studio/05.jpg"
+              alt={t('about.imgAlt')}
+              loading="lazy"
+              className="w-full h-full object-cover object-center grayscale opacity-70"
             />
           </div>
         </div>
@@ -83,7 +73,8 @@ export default function About() {
   );
 }
 
-function CredentialBlock({ cred, index }: { cred: typeof credentials[0]; index: number }) {
+function CredentialBlock({ cred, index }: { cred: Cred; index: number }) {
+  const { t } = useI18n();
   const { ref, visible } = useScrollReveal<HTMLDivElement>();
   return (
     <div
@@ -93,16 +84,17 @@ function CredentialBlock({ cred, index }: { cred: typeof credentials[0]; index: 
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
       }`}
     >
-      <span className="font-['Fraunces'] text-[2.2rem] font-700 text-[#F4F1EC] block leading-none mb-1">
+      <span className="font-['Fraunces'] text-[2.2rem] font-[700] text-[#F4F1EC] block leading-none mb-1">
         {cred.value}
       </span>
-      <span className="text-[#F4F1EC]/70 text-sm font-medium block mb-0.5">{cred.label}</span>
-      <span className="text-[#F4F1EC]/30 text-xs font-light">{cred.sub}</span>
+      <span className="text-[#F4F1EC]/70 text-sm font-medium block mb-0.5">{t(cred.labelKey)}</span>
+      <span className="text-[#F4F1EC]/30 text-xs font-light">{t(cred.subKey)}</span>
     </div>
   );
 }
 
-function DetailBlock({ detail, index }: { detail: typeof details[0]; index: number }) {
+function DetailBlock({ detail, index }: { detail: Detail; index: number }) {
+  const { t } = useI18n();
   const { ref, visible } = useScrollReveal<HTMLDivElement>();
   return (
     <div
@@ -113,8 +105,8 @@ function DetailBlock({ detail, index }: { detail: typeof details[0]; index: numb
       }`}
     >
       <div className="w-8 h-px bg-[#C0362C] mb-5" />
-      <h3 className="text-[#F4F1EC] font-semibold text-base mb-3">{detail.title}</h3>
-      <p className="text-[#F4F1EC]/50 text-sm font-light leading-relaxed">{detail.body}</p>
+      <h3 className="text-[#F4F1EC] font-semibold text-base mb-3">{t(detail.titleKey)}</h3>
+      <p className="text-[#F4F1EC]/50 text-sm font-light leading-relaxed">{t(detail.bodyKey)}</p>
     </div>
   );
 }

@@ -1,3 +1,21 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+dist-ssr/
+build/
+.vite/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -6,18 +24,35 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
+# Editor / IDE
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+!.vscode/settings.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.env
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local
+*.local
+.cache/
+
+# Vercel
+.vercel
+
+# Discovery / scratch — keep local, do not commit
+scraped/
+SnapInsta.to_*
+*.bolt-backup
+
+# Loose root dumps (move into src/ or public/ before committing)
+/logo.png
+/logotransperant.png

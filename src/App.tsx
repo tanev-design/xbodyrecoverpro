@@ -1,3 +1,5 @@
+import { I18nProvider } from './i18n/I18nProvider';
+import SmoothScroll from './lib/SmoothScroll';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
@@ -9,17 +11,20 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="antialiased" style={{ fontFamily: "'Inter', sans-serif" }}>
-      <Nav />
-      <main>
-        <Hero />
-        <HowItWorks />
-        <Services />
-        <About />
-        <Testimonials />
-        <Pricing />
-      </main>
-      <Footer />
-    </div>
+    <I18nProvider>
+      <SmoothScroll />
+      <div className="antialiased" style={{ fontFamily: "'Inter', sans-serif" }}>
+        <Nav />
+        <main id="main">
+          <Hero />
+          <HowItWorks />
+          <Services />
+          <About />
+          <Testimonials />
+          <Pricing />
+        </main>
+        <Footer />
+      </div>
+    </I18nProvider>
   );
 }
