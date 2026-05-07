@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
 import Services from './components/Services';
 import About from './components/About';
+import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
@@ -20,6 +21,7 @@ export default function App() {
           <HowItWorks />
           <Services />
           <About />
+          <Team />
           <Testimonials />
           <Pricing />
         </main>

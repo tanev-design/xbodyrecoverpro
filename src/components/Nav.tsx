@@ -19,6 +19,7 @@ export default function Nav() {
     { label: t('nav.howItWorks'), href: '#how-it-works' },
     { label: t('nav.services'), href: '#services' },
     { label: t('nav.about'), href: '#about' },
+    { label: t('nav.team'), href: '#team' },
     { label: t('nav.pricing'), href: '#pricing' },
   ];
 
